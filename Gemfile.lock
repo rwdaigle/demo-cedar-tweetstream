@@ -1,0 +1,50 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    activesupport (3.0.7)
+    builder (3.0.0)
+    crack (0.1.8)
+    daemons (1.1.3)
+    eventmachine (0.12.10)
+    hoptoad_notifier (2.4.9)
+      activesupport
+      builder
+    json (1.4.6)
+    newrelic_rpm (3.0.0)
+    pusher (0.8.0)
+      crack (~> 0.1.0)
+      json (~> 1.4.0)
+      ruby-hmac (~> 0.4.0)
+      signature (~> 0.1.2)
+    rack (1.2.2)
+    rake (0.8.7)
+    ruby-hmac (0.4.0)
+    signature (0.1.2)
+      ruby-hmac
+    simple_oauth (0.1.5)
+    sinatra (1.2.6)
+      rack (~> 1.1)
+      tilt (>= 1.2.2, < 2.0)
+    thin (1.2.11)
+      daemons (>= 1.0.9)
+      eventmachine (>= 0.12.6)
+      rack (>= 1.0.0)
+    tilt (1.3)
+    tweetstream (1.0.4)
+      daemons
+      twitter-stream
+    twitter-stream (0.1.13)
+      eventmachine (~> 0.12.8)
+      simple_oauth (~> 0.1.4)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  hoptoad_notifier
+  newrelic_rpm
+  pusher
+  rake
+  sinatra
+  thin
+  tweetstream

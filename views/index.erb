@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <title>Pusher Example</title>
+    <script src="http://js.pusherapp.com/1.8/pusher.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
+    <style>
+    </style>
+    <script>
+      $(window).ready(function() {
+        var pusher = new Pusher('<%= pusher_api_key %>');
+        var channel = pusher.subscribe('tweets');
+
+        channel.bind('tweet', function(tweet) {
+          var template = $('#tweet-template').html()
+            .replace('{{PROFILE_IMAGE}}', tweet.user.profile_image_url)
+            .replace('{{TEXT}}', tweet.text);
+          $('#tweets').prepend(template);
+        });
+      });
+    </script>
+    <script id="tweet-template" type="text/html">
+      <li class="tweet">
+        <img src="{{PROFILE_IMAGE}}"/>
+        {{TEXT}}
+      </li>
+    </script>
+  </head>
+  <body>
+    <h1>Tweets about <%=ENV["TWITTER_KEYWORD"]%></h1>
+    <ul id="tweets"></ul>
+  </body>
+</html>
+
