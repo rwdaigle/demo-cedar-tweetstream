@@ -4,8 +4,6 @@
     <script src="http://js.pusherapp.com/1.8/pusher.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
-    <style>
-    </style>
     <script>
       $(window).ready(function() {
         var pusher = new Pusher('<%= pusher_api_key %>');
@@ -21,7 +19,7 @@
     </script>
     <script id="tweet-template" type="text/html">
       <li class="tweet">
-        <img src="{{PROFILE_IMAGE}}"/>
+        <img width="48" height="48" src="{{PROFILE_IMAGE}}"/>
         {{TEXT}}
       </li>
     </script>
