@@ -3,6 +3,7 @@ require "bundler/setup"
 
 require "sinatra"
 require "uri"
+require "newrelic_rpm"
 require "hoptoad_notifier"
 
 HoptoadNotifier.configure do |config|
