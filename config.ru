@@ -4,8 +4,8 @@ require "bundler/setup"
 require "sinatra"
 require "uri"
 
-configure :production do
-  require "newrelic_rpm"
+HoptoadNotifier.configure do |config|
+  config.api_key = ENV['HOPTOAD_API_KEY']
 end
 
 get "/" do
