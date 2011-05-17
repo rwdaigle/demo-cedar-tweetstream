@@ -3,6 +3,7 @@ require "bundler/setup"
 
 require "sinatra"
 require "uri"
+require "hoptoad_notifier"
 
 HoptoadNotifier.configure do |config|
   config.api_key = ENV['HOPTOAD_API_KEY']
