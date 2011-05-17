@@ -24,5 +24,6 @@ helpers do
   end
 end
 
+use HoptoadNotifier::Rack
 run Sinatra::Application
 
