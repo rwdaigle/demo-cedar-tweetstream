@@ -7,4 +7,4 @@ gem "pusher"
 gem "tweetstream"
 
 gem "hoptoad_notifier"
-gem "newrelic_rpm"
+gem "newrelic_rpm", "2.14.1"

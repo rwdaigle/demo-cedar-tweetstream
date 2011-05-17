@@ -10,7 +10,7 @@ GEM
       activesupport
       builder
     json (1.4.6)
-    newrelic_rpm (3.0.0)
+    newrelic_rpm (2.14.1)
     pusher (0.8.0)
       crack (~> 0.1.0)
       json (~> 1.4.0)
@@ -42,7 +42,7 @@ PLATFORMS
 
 DEPENDENCIES
   hoptoad_notifier
-  newrelic_rpm
+  newrelic_rpm (= 2.14.1)
   pusher
   rake
   sinatra
