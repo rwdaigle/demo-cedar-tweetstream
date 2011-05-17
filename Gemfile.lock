@@ -42,7 +42,7 @@ PLATFORMS
 
 DEPENDENCIES
   hoptoad_notifier
-  newrelic_rpm (= 2.14.1)
+  newrelic_rpm
   pusher
   rake
   sinatra
