@@ -1,5 +1,5 @@
 ---
-<%= ENV["RAILS_ENV"] %>:
+<%= ENV["RACK_ENV"] %>:
   error_collector:
     capture_source: true
     enabled: true
