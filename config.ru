@@ -3,7 +3,10 @@ require "bundler/setup"
 
 require "sinatra"
 require "uri"
-require "newrelic_rpm"
+
+configure :production do
+  require "newrelic_rpm"
+end
 
 get "/" do
   erb :index
