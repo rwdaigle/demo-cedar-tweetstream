@@ -3,6 +3,7 @@ GEM
   specs:
     activesupport (3.0.7)
     builder (3.0.0)
+    clockwork (0.2.3)
     crack (0.1.8)
     daemons (1.1.3)
     eventmachine (0.12.10)
@@ -41,6 +42,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  clockwork
   hoptoad_notifier
   newrelic_rpm
   pusher
