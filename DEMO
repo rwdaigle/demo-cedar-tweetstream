@@ -7,16 +7,17 @@ bundle install
 
 heroku create ryan-tweetstream --stack cedar
 heroku config:set TWITTER_USERNAME=rwdaigle TWITTER_PASSWORD=mypass TWITTER_KEYWORD=ruby
-heroku addons:add pusher:test
+heroku addons:add pusher:test redistogo:small
 heroku addons:upgrade logging:expanded releases:advanced
 git push heroku master
 
 # Run/scale
 
-heroku scale web=2 stream=1 clock=1
+heroku scale web=1 stream=1 clock=1
 
 # Introspect
 
 watch heroku ps
 heroku releases
 heroku logs --tail -s app
+/resque

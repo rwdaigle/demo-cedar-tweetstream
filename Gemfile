@@ -6,6 +6,7 @@ gem "sinatra"
 gem "pusher"
 gem "tweetstream"
 gem "clockwork"
+gem "resque"
 
 gem "hoptoad_notifier"
 gem "newrelic_rpm"
