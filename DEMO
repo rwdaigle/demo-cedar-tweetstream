@@ -6,7 +6,7 @@ bundle install
 # Create & configure
 
 heroku create ryan-tweetstream --stack cedar
-heroku config:add TWITTER_USERNAME=rwdaigle TWITTER_PASSWORD=mypass TWITTER_KEYWORD=ruby
+heroku config:add TWITTER_USERNAME=herokutesting TWITTER_PASSWORD=heroku TWITTER_KEYWORD=ruby
 heroku addons:add pusher:test redistogo:small
 heroku addons:upgrade logging:expanded releases:advanced
 git push heroku master
