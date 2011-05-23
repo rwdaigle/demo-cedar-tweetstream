@@ -17,7 +17,7 @@ Resque.redis = Redis.new(:host => uri.host, :port => uri.port, :password => uri.
 task "tweetstream:stream" do
   TweetStream::Client.new(ENV["TWITTER_USERNAME"], ENV["TWITTER_PASSWORD"]).track(ENV["TWITTER_KEYWORD"]) do |status|
     puts "Processing tweet: #{status[:text]}"
-    Resque.enqueue(IndexTweet, status)
+    Resque.enqueue(IndexTweet, status[:user][:screen_name], status[:text])
     Pusher['tweets'].trigger('tweet', status)
   end
 end
