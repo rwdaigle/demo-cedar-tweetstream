@@ -1,3 +1,3 @@
 web: bundle exec thin start -p $PORT -e $RACK_ENV
-worker: bundle exec rake jobs:work
+stream: bundle exec rake tweetstream:stream --trace
 clock: bundle exec clockwork clock.rb

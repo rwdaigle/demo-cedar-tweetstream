@@ -6,6 +6,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
     <script>
       $(window).ready(function() {
+
+        Pusher.log = function(message) {
+          if (window.console && window.console.log) window.console.log(message);
+        };
+
         var pusher = new Pusher('<%= pusher_api_key %>');
         var channel = pusher.subscribe('tweets');
 

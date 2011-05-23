@@ -1,0 +1,12 @@
+# Setup
+
+git clone git@github.com:rwdaigle/tweetstream.git
+bundle install
+
+# Create & configure
+
+heroku create ryan-tweetstream --stack cedar
+heroku config:set TWITTER_USERNAME=rwdaigle TWITTER_PASSWORD=mypass TWITTER_KEYWORD=mykeyword
+heroku addons:add pusher:test
+heroku addons:upgrade logging:expanded releases:advanced
+git push heroku master

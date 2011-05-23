@@ -6,7 +6,7 @@ require "tweetstream"
 
 STDOUT.sync = true
 
-task "jobs:work" do
+task "tweetstream:stream" do
   Pusher.app_id =
   TweetStream::Client.new(ENV["TWITTER_USERNAME"], ENV["TWITTER_PASSWORD"]).track(ENV["TWITTER_KEYWORD"]) do |status|
     puts "%s: %s" % [ status[:user][:screen_name], status[:text] ]
