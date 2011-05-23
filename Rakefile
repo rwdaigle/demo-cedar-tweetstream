@@ -6,9 +6,9 @@ require "tweetstream"
 require "resque"
 require 'resque/tasks'
 
-STDOUT.sync = true
+require File.dirname(__FILE__) + "/jobs/index_tweet"
 
-Pusher.app_id = 5700
+STDOUT.sync = true
 
 task "tweetstream:stream" do
   TweetStream::Client.new(ENV["TWITTER_USERNAME"], ENV["TWITTER_PASSWORD"]).track(ENV["TWITTER_KEYWORD"]) do |status|
