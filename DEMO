@@ -20,3 +20,8 @@ heroku scale web=1 stream=1 clock=1 worker=1
 watch heroku ps
 heroku releases
 heroku logs --tail -s app
+
+# Manage
+
+heroku run bundle exec rake tweetstream:queue:clear
+heroku run bash

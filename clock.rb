@@ -1,1 +1,1 @@
-every(30.seconds, 'print.time') { puts "Doing something at a regular interval." }
+every(30.seconds, 'every.30.seconds') { puts "Do something" }
