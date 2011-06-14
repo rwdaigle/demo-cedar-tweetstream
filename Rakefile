@@ -18,3 +18,7 @@ task "tweetstream:stream" do
     Pusher['tweets'].trigger('tweet', status)
   end
 end
+
+task "tweetstream:queue:clear" do
+  Resque.redis.del "queue:normal"
+end
