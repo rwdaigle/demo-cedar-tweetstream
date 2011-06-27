@@ -1,7 +1,5 @@
 require "sinatra/base"
 require "uri"
-require "newrelic_rpm"
-require "hoptoad_notifier"
 
 module TweetStream
   class App < Sinatra::Base
@@ -20,11 +18,5 @@ module TweetStream
       end
     end
 
-    # send errors to hoptoad
-    enable :raise_errors
-    HoptoadNotifier.configure do |config|
-      config.api_key = ENV['HOPTOAD_API_KEY']
-    end
-    use HoptoadNotifier::Rack
   end
 end

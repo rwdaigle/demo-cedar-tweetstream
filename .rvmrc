@@ -1,1 +1,1 @@
-rvm use ruby-1.9.2@demo.tweetstream --create
+rvm use ruby-1.9.2@demo.cedar-tweetstream --create
