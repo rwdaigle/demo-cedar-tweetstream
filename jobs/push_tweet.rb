@@ -7,7 +7,7 @@ class PushTweet
 
   def self.perform(tweet)
     puts "Broadcasting tweet: #{tweet["text"]}"
-    Pusher['tweets'].trigger('tweet', tweet["text"])
+    Pusher['tweets'].trigger('tweet', tweet)
   end
 
 end
