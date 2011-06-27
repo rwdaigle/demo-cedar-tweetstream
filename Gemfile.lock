@@ -31,6 +31,7 @@ GEM
     json (1.4.6)
     multipart-post (1.1.2)
     newrelic_rpm (2.14.1)
+    pg (0.11.0)
     pusher (0.8.0)
       crack (~> 0.1.0)
       json (~> 1.4.0)
@@ -78,6 +79,7 @@ DEPENDENCIES
   clockwork
   indextank
   newrelic_rpm
+  pg
   pusher
   rake
   resque
