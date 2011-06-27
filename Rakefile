@@ -31,6 +31,15 @@ namespace :queue do
   end
 end
 
+namespace :resque do
+
+  task :setup => "queue:environment" do
+    Resque.after_fork do |job|
+      ActiveRecord::Base.establish_connection if job.is_a?(PersistTweet)
+    end
+  end
+end
+
 namespace :db do
 
   task :environment do
