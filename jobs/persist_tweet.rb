@@ -7,7 +7,7 @@ class PersistTweet
 
   def self.perform(tweet)
     puts "Saving tweet: #{tweet["text"]}"
-    Tweet.create!(:user => tweet["username"], :text => tweet["text"])
+    Tweet.create!(:user => tweet["user"]["screen_name"], :text => tweet["text"])
   end
 
 end

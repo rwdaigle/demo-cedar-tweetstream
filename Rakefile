@@ -35,7 +35,9 @@ namespace :resque do
 
   task :setup => "queue:environment" do
     Resque.after_fork do |job|
-      ActiveRecord::Base.establish_connection if job.is_a?(PersistTweet)
+      if job.payload_class == PersistTweet
+        require File.dirname(__FILE__) + "/config/active_record"
+      end
     end
   end
 end
