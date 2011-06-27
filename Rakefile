@@ -12,7 +12,7 @@ STDOUT.sync = true
 
 task "tweetstream:stream" => "queue:environment" do
   TweetStream::Client.new(ENV["TWITTER_USERNAME"], ENV["TWITTER_PASSWORD"]).track(ENV["TWITTER_KEYWORD"]) do |status|
-    puts "Processing tweet: #{status[:text]}"
+    puts "Received tweet: #{status[:text]}"
     Resque.enqueue(PushTweet, status)
     Resque.enqueue(PersistTweet, status)
   end

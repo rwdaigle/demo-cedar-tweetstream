@@ -6,7 +6,7 @@ class PersistTweet
   @queue = :persist
 
   def self.perform(tweet)
-    puts "Persisting: #{tweet["text"]}"
+    puts "Saving tweet: #{tweet["text"]}"
     Tweet.create!(:user => tweet["username"], :text => tweet["text"])
   end
 
