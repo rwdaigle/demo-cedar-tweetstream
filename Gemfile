@@ -1,6 +1,7 @@
 source "http://rubygems.org"
 
 gem "thin"
+gem "rake"
 gem "sinatra"
 gem "pusher"
 gem "tweetstream"
@@ -11,7 +12,6 @@ gem "indextank"
 
 group :development do
   gem "sqlite3"
-  gem "rake"
 end
 
 group :production do
