@@ -1,3 +1,5 @@
+require File.dirname(__FILE__) + "/../config/resque"
+
 class PushTweet
 
   @queue = :push

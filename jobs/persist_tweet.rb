@@ -1,3 +1,4 @@
+require File.dirname(__FILE__) + "/../config/resque"
 require File.dirname(__FILE__) + "/../models/tweet"
 
 class PersistTweet
