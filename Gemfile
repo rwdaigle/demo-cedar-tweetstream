@@ -7,7 +7,7 @@ gem "pusher"
 gem "tweetstream"
 gem "clockwork"
 gem "resque"
-gem "activerecord", "~>3.0.7"
+gem "activerecord", "~>3.0.9"
 gem "indextank"
 
 group :development do

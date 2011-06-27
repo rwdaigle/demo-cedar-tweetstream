@@ -75,7 +75,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activerecord (~> 3.0.7)
+  activerecord (~> 3.0.9)
   clockwork
   indextank
   newrelic_rpm
