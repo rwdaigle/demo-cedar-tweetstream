@@ -8,6 +8,7 @@ bundle install
 heroku create --stack cedar
 heroku config:add TWITTER_USERNAME=herokutesting TWITTER_PASSWORD=heroku TWITTER_KEYWORD=ruby
 heroku addons:add heroku-postgresql:ronin
+heroku addons:add pgbackups:auto-week
 heroku addons:add indextank:starter
 heroku addons:add pusher:test
 heroku addons:add redistogo:small
@@ -26,5 +27,6 @@ heroku logs --tail -s app
 # Manage
 
 heroku config:add TWITTER_KEYWORD=node
-heroku run bundle exec rake tweetstream:queue:clear
+heroku run bundle exec rake queue:clear
 heroku run bash
+heroku rollback

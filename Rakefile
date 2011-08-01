@@ -10,6 +10,9 @@ require File.dirname(__FILE__) + "/jobs/persist_tweet"
 
 STDOUT.sync = true
 
+
+#-- Stream search results from twitter --#
+
 task "tweetstream:stream" => "queue:environment" do
   TweetStream::Client.new(ENV["TWITTER_USERNAME"], ENV["TWITTER_PASSWORD"]).track(ENV["TWITTER_KEYWORD"]) do |status|
     puts "Received tweet: #{status[:text]}"
@@ -17,6 +20,9 @@ task "tweetstream:stream" => "queue:environment" do
     Resque.enqueue(PersistTweet, status)
   end
 end
+
+
+#-- Management/config --#
 
 namespace :queue do
 
